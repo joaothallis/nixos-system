@@ -96,6 +96,7 @@
     packages = with pkgs; [
       git
       gh
+      tig
     ];
   };
 
