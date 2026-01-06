@@ -97,6 +97,7 @@
       git
       gh
       tig
+      bitwarden-desktop
     ];
   };
 
