@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +17,8 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."luks-769370cf-598d-44a8-a737-92503b44a377".device = "/dev/disk/by-uuid/769370cf-598d-44a8-a737-92503b44a377";
+  boot.initrd.luks.devices."luks-769370cf-598d-44a8-a737-92503b44a377".device =
+    "/dev/disk/by-uuid/769370cf-598d-44a8-a737-92503b44a377";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -88,7 +89,10 @@
   users.users.joao = {
     isNormalUser = true;
     description = "João Thallis";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       git
     ];
