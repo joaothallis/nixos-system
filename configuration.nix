@@ -98,6 +98,7 @@
       git
       gh
       tig
+      neovim
       bitwarden-desktop
     ];
   };
