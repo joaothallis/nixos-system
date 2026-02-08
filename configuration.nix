@@ -101,6 +101,7 @@
       tig
       neovim
       bitwarden-desktop
+      telegram-desktop
     ];
   };
 
