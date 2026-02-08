@@ -4,7 +4,12 @@
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
   outputs =
-    inputs@{ self, nixpkgs, codex-cli-nix, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      codex-cli-nix,
+      ...
+    }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
