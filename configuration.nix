@@ -107,6 +107,7 @@
       neovim
       bitwarden-desktop
       telegram-desktop
+      zoom-us
     ];
   };
 
