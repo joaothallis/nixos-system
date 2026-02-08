@@ -1,12 +1,15 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     inputs@{
       self,
       nixpkgs,
+      home-manager,
       codex-cli-nix,
       ...
     }:
@@ -16,6 +19,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+          home-manager.nixosModules.home-manager
           {
             nix = {
               settings.experimental-features = [
@@ -23,6 +27,9 @@
                 "flakes"
               ];
             };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.joao = ./home.nix;
           }
         ];
       };
