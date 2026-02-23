@@ -22,6 +22,8 @@
     gca = "git commit --patch --amend";
   };
 
+  programs.kitty.enable = true;
+
   programs.chromium.enable = true;
 
   # This value determines the Home Manager release that your
