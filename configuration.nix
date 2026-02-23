@@ -104,7 +104,7 @@
       git
       gh
       tig
-      neovim
+      ripgrep
       bitwarden-desktop
       telegram-desktop
       zoom-us
