@@ -13,6 +13,7 @@
   };
   programs.bash.enable = true;
   programs.bash.shellAliases = {
+    g = "git branch --show-current";
     gs = "git status";
     gd = "git diff";
     gl = "git pull --prune";
