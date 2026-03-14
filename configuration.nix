@@ -121,7 +121,10 @@
     inputs.codex-cli-nix.packages.${pkgs.system}.default
   ];
 
-  nix.settings.trusted-users = [ "root" "joao" ];
+  nix.settings.trusted-users = [
+    "root"
+    "joao"
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
