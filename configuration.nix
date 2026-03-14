@@ -102,6 +102,7 @@
       alsa-tools
       gh
       tig
+      copilot-language-server
       ripgrep
       bitwarden-desktop
       telegram-desktop
