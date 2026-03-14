@@ -102,6 +102,7 @@
       alsa-tools
       gh
       tig
+      nixd
       copilot-language-server
       ripgrep
       bitwarden-desktop
