@@ -100,7 +100,6 @@
     ];
     packages = with pkgs; [
       nodePackages_latest.nodejs
-      git
       gh
       tig
       ripgrep

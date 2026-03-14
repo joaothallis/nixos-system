@@ -6,6 +6,22 @@
   home.username = "joao";
   home.homeDirectory = "/home/joao";
 
+  programs.git = {
+    settings = {
+      user = {
+        name = "João Thallis";
+        email = "joaothallis.developer@gmail.com";
+        commit = {
+          verbose = true;
+        };
+      };
+    };
+    enable = true;
+    ignores = [
+      ".direnv"
+      ".envrc"
+    ];
+  };
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
