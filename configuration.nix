@@ -99,6 +99,7 @@
       "wheel"
     ];
     packages = with pkgs; [
+      alsa-tools
       gh
       tig
       ripgrep
