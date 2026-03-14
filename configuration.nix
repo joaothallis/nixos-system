@@ -99,7 +99,6 @@
       "wheel"
     ];
     packages = with pkgs; [
-      nodePackages_latest.nodejs
       gh
       tig
       ripgrep
