@@ -121,6 +121,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     inputs.codex-cli-nix.packages.${pkgs.system}.default
+    pkgs.jellyfin-desktop
   ];
 
   nix.settings.trusted-users = [
