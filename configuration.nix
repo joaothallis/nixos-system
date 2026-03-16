@@ -122,6 +122,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pkgs.nixfmt
     inputs.codex-cli-nix.packages.${pkgs.system}.default
     pkgs.jellyfin-desktop
   ];
