@@ -9,6 +9,11 @@
   ...
 }:
 
+let
+  galaxybookAudioScript = pkgs.writeShellScript "galaxybook-audio-init" (
+    builtins.readFile ./scripts/galaxybook-audio-init.sh
+  );
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -21,6 +26,9 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0
+  '';
 
   boot.initrd.luks.devices."luks-769370cf-598d-44a8-a737-92503b44a377".device =
     "/dev/disk/by-uuid/769370cf-598d-44a8-a737-92503b44a377";
@@ -89,6 +97,38 @@
     #media-session.enable = true;
   };
 
+  systemd.services.galaxybook-audio = {
+    description = "GalaxyBook2 Audio Init Script";
+    after = [ "sound.target" ];
+    wants = [ "sound.target" ];
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.alsa-tools ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${galaxybookAudioScript}";
+      RemainAfterExit = true;
+    };
+    unitConfig = {
+      ConditionPathExists = "/dev/snd/hwC0D0";
+    };
+  };
+
+  systemd.services.galaxybook-audio-resume = {
+    description = "GalaxyBook2 Audio Resume Fix";
+    before = [ "suspend.target" ];
+    wantedBy = [ "suspend.target" ];
+    path = [ pkgs.alsa-tools ];
+    unitConfig = {
+      StopWhenUnneeded = true;
+    };
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.coreutils}/bin/true";
+      ExecStop = "${galaxybookAudioScript}";
+      RemainAfterExit = true;
+    };
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -101,7 +141,6 @@
       "wheel"
     ];
     packages = with pkgs; [
-      alsa-tools
       gh
       tig
       nixd

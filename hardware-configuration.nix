@@ -21,7 +21,10 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "snd-hda-intel"
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
