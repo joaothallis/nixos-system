@@ -124,6 +124,7 @@
   environment.systemPackages = with pkgs; [
     pkgs.nixfmt
     inputs.codex-cli-nix.packages.${pkgs.system}.default
+    pkgs.mcp-nixos
     pkgs.jellyfin-desktop
   ];
 
