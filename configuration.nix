@@ -147,6 +147,7 @@ in
       copilot-language-server
       ripgrep
       bitwarden-desktop
+      tor-browser
       telegram-desktop
       zoom-us
     ];
