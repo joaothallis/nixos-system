@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
+    nix-ai-tools.url = "github:numtide/nix-ai-tools";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };

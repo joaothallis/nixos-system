@@ -161,9 +161,10 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with inputs.nix-ai-tools.packages.${pkgs.stdenv.hostPlatform.system}; [
     pkgs.nixfmt
     inputs.codex-cli-nix.packages.${pkgs.system}.default
+    claude-code
     pkgs.mcp-nixos
     pkgs.jellyfin-desktop
   ];
