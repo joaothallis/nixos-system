@@ -162,7 +162,7 @@ in
   # $ nix search wget
   environment.systemPackages = with inputs.nix-ai-tools.packages.${pkgs.stdenv.hostPlatform.system}; [
     pkgs.nixfmt
-    inputs.codex-cli-nix.packages.${pkgs.system}.default
+    inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code
     pkgs.mcp-nixos
     pkgs.jellyfin-desktop
