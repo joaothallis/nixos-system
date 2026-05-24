@@ -164,13 +164,14 @@
       }
       {
         plugin = vim-test;
+        type = "lua";
         config = ''
-          nmap <silent> <leader>t :TestNearest<CR>
-          nmap <silent> <leader>T :TestFile<CR>
-          nmap <silent> <leader>a :TestSuite<CR>
-          nmap <silent> <leader>l :TestLast<CR>
-          nmap <silent> <leader>g :TestVisit<CR>
-          	  '';
+          vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { silent = true })
+          vim.keymap.set('n', '<leader>T', ':TestFile<CR>', { silent = true })
+          vim.keymap.set('n', '<leader>a', ':TestSuite<CR>', { silent = true })
+          vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { silent = true })
+          vim.keymap.set('n', '<leader>g', ':TestVisit<CR>', { silent = true })
+        '';
       }
       vim-fugitive
       {
