@@ -149,7 +149,6 @@ in
       bitwarden-desktop
       tor-browser
       telegram-desktop
-      zoom-us
     ];
   };
 
