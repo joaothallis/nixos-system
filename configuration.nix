@@ -146,7 +146,6 @@ in
       nixd
       copilot-language-server
       ripgrep
-      bitwarden-desktop
       tor-browser
       telegram-desktop
     ];
