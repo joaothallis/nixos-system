@@ -154,6 +154,9 @@ in
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Enable nix-ld to run unpatched dynamic binaries.
+  programs.nix-ld.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
