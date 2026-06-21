@@ -153,6 +153,7 @@ in
       nixd
       copilot-language-server
       ripgrep
+      librewolf
       tor-browser
       telegram-desktop
     ];
