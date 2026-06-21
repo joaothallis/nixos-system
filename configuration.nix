@@ -166,7 +166,6 @@ in
     pkgs.nixfmt
     inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code
-    gemini-cli
     pkgs.mcp-nixos
     pkgs.jellyfin-desktop
   ];
