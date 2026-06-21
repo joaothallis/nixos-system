@@ -171,7 +171,6 @@ in
     inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code
     pkgs.mcp-nixos
-    pkgs.jellyfin-desktop
   ];
 
   nix.settings.trusted-users = [
