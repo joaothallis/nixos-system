@@ -154,13 +154,9 @@ in
       copilot-language-server
       ripgrep
       librewolf
-      tor-browser
       telegram-desktop
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Enable nix-ld to run unpatched dynamic binaries.
   programs.nix-ld.enable = true;
