@@ -153,7 +153,6 @@ in
       nixd
       copilot-language-server
       ripgrep
-      librewolf
       telegram-desktop
     ];
   };
