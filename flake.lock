@@ -212,7 +212,8 @@
         "codex-cli-nix": "codex-cli-nix",
         "home-manager": "home-manager",
         "nix-ai-tools": "nix-ai-tools",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -263,6 +264,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782624757,
+        "narHash": "sha256-pqFaCAV+g8H+p0kE4vYn9ZgcEFvt644zGy7SyCdf9c8=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "907465791e7064d86d37964dd95e23280dfb68da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

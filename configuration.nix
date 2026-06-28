@@ -168,6 +168,7 @@ in
   # $ nix search wget
   environment.systemPackages = with inputs.nix-ai-tools.packages.${pkgs.stdenv.hostPlatform.system}; [
     pkgs.nixfmt
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code
     pkgs.mcp-nixos
