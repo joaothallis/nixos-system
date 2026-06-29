@@ -165,6 +165,7 @@ in
       nixd
       copilot-language-server
       ripgrep
+      brave
       telegram-desktop
     ];
   };
