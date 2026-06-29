@@ -76,6 +76,18 @@ in
     gnome-user-docs
   ];
 
+  # The GNOME portal delegates the file-chooser dialog to Nautilus, which is
+  # removed via core-apps.enable = false. Route FileChooser to the self-contained
+  # GTK backend so "select a file" dialogs work in browsers without pulling
+  # Nautilus back in.
+  xdg.portal.config.gnome = {
+    default = [
+      "gnome"
+      "gtk"
+    ];
+    "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
