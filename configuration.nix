@@ -183,6 +183,7 @@ in
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     claude-code
+    opencode
     pkgs.mcp-nixos
   ];
 
